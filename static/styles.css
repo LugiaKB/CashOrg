@@ -1,0 +1,96 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    font-family: "Candara";
+}
+
+/* Colors for brand */
+nav .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+.table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2e944b;
+    border: 1px solid #ddd;
+}
+
+.lau {
+    padding: 15px;
+}
+
+.sel {
+    padding: 15px;
+    text-align: right;
+}
+
+.ind {
+    padding: 15px;
+    text-align: left;
+    color: black;
+}
+
+.inde {
+    border: 2px solid #2e944b;
+    border-radius: 0.5rem;
+    padding: 15px;
+}
+
+.title {
+    color: black;
+    text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.title:hover {
+  text-decoration: none;
+  color: black;
+}
+
+a:active {
+  text-decoration: none;
+}

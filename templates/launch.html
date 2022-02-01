@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+
+    <form action='/launch' method='post'>
+        <div class="form-group" class='launching'>
+            <div class='lau'>
+                <label class='lau'>Transaction's name:</label>
+                <input autofocus class="form-control" name="name" placeholder="Name" type="text">
+                <label class='lau'>Cost:</label>
+                <input class="form-control" placeholder=0.00 type='number' name = 'cost' step='.05'>
+                <label class='lau' for='idSelect2'>Categories:</label>
+                <select class="js-example-basic-multiple" class="form-control" multiple="multiple" name='categ'>
+                    <optgroup label='Expenses'>
+                    {% for excateg in excategs %}
+                        <option value='{{excateg["name"]}}'>{{excateg['name']}}</option>
+                    {% endfor %}
+                    </optgroup>
+                    <optgroup label='Incomes'>
+                    {% for incateg in incategs %}
+                        <option value='{{incateg["name"]}}'>{{incateg['name']}}</option>
+                    {% endfor %}
+                    </optgroup>
+                </select>
+            </div>
+            <div class='lau'>
+                <label class='lau'>Account:</label>
+                <select class='form-control' name='conta' id='conta'>
+                    {% for conta in contas %}
+
+                        <option value='{{conta["name"]}}'>{{conta["name"]}}</option>
+
+                    {% endfor %}
+                </select>
+                <label class='lau'>Operation type:</label>
+                <select class='form-control' name='operation' id='operation'>
+                    {% for option in options %}
+
+                        <option value='{{option}}'>{{option}}</option>
+
+                    {% endfor %}
+                </select>
+                <span id='transfer'></span>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Launch</button>
+
+    </form>
+
+{% endblock %}

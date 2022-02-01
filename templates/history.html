@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h1>History</h1>
+    <div class='sel'>
+        <form action='/history' method='post'>
+            <select class='form-control' name='opera'>
+                <option value='All'>All</option>
+                {% for option in options %}
+
+                    <option value='{{option}}'>{{option}}</option>
+
+                {% endfor %}
+            </select>
+            <button class="btn btn-primary" type="submit">Refresh</button>
+        </form>
+    </div>
+    <p></p>
+
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account</th>
+                <th>Cost</th>
+                <th>Categories</th>
+                <th>Transaction Type</th>
+                <th>Time</th>
+                <th>Receiving Account</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+
+                <tr>
+                    <td>{{row['item_name']}}</td>
+                    <td>{{row['conta']}}</td>
+                    <td>{{row['cost'] | usd}}</td>
+                    <td>{{row['categs']}}</td>
+                    <td>{{row['transaction_type']}}</td>
+                    <td>{{row['time']}}</td>
+                    <td>{{row['inconta']}}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

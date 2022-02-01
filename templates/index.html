@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <h1>Welcome!</h1>
+    <p>In CashOrg, you'll be able to manage your money and expendings.</p>
+
+    <div class='inde'>
+        <h2 class='ind'>Launch a new transaction!</h2>
+        <a href="/launch"><button class="btn btn-primary" class='ind'>Launch</button></a>
+    </div>
+    <div class='inde'>
+        <h2 class='ind'>Your accounts</h2>
+        <h6 class='ind'>Click on the table to see more!</h6>
+            <a href="/accounts" class='title'><table class='table'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for conta in contas %}
+
+                        <tr>
+                            <td>{{conta['name']}}</td>
+                            <td>{{conta['cash'] | usd}}</td>
+                        </tr>
+
+                    {% endfor %}
+                </tbody>
+            </table></a>
+    </div>
+    <div class='inde'>
+        <h2 class='ind'>Recent transactions</h2>
+        <h6 class='ind'>Click on the table to see more!</h6>
+        <a href="/history" class='title'><table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Account</th>
+                <th>Cost</th>
+                <th>Categories</th>
+                <th>Transaction Type</th>
+                <th>Time</th>
+                <th>Receiving Account</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+
+                <tr>
+                    <td>{{row['item_name']}}</td>
+                    <td>{{row['conta']}}</td>
+                    <td>{{row['cost'] | usd}}</td>
+                    <td>{{row['categs']}}</td>
+                    <td>{{row['transaction_type']}}</td>
+                    <td>{{row['time']}}</td>
+                    <td>{{row['inconta']}}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table></a>
+    </div>
+{% endblock %}

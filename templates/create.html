@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/create" method="post">
+        <h3>Create an account to manage your money!</h3>
+        <div class="form-group" class='lau'>
+            <label class='lau'>Account name:</label>
+            <input class="form-control"  class='lau' name="name" type="text">
+            <label class='lau'>Initial balance:</label>
+            <input class="form-control" class='lau' name='balance' placeholder=0.00 type='number' step='.05'>
+            <button class="btn btn-primary" class='lau' type="submit">Create</button>
+        </div>
+    </form>
+{% endblock %}

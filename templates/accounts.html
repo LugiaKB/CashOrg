@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+
+    <h3>Accounts</h3>
+
+    <p></p>
+
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for conta in contas %}
+
+                <tr>
+                    <td>{{conta['name']}}</td>
+                    <td>{{conta['cash'] | usd}}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
